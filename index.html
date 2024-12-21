@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realistic Lily with Moon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #0b1d26, #020d13);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .moon {
+      position: absolute;
+      top: 10%;
+      left: 70%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #fff, #d9d9d9, #b3b3b3);
+      border-radius: 50%;
+      box-shadow: 0 0 50px 20px #ffffff44, 0 0 100px 50px #ffffff22;
+      animation: glow 5s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 50px 20px #ffffff44, 0 0 100px 50px #ffffff22;
+      }
+      100% {
+        box-shadow: 0 0 60px 30px #ffffff66, 0 0 120px 60px #ffffff33;
+      }
+    }
+
+    .land {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 20%;
+      background: linear-gradient(to top, #0a3410, #164c1a);
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      border-radius: 50%;
+      animation: flicker 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes flicker {
+      0% {
+        opacity: 0.8;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .lily {
+      position: relative;
+      width: 20px;
+      animation: sway 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes sway {
+      0% {
+        transform: rotate(-2deg);
+      }
+      100% {
+        transform: rotate(2deg);
+      }
+    }
+
+    .stem {
+      position: relative;
+      width: 10px;
+      height: 200px;
+      background: linear-gradient(to top, #054d00, #0d8600);
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+
+    .leaves {
+      position: absolute;
+      width: 60px;
+      height: 30px;
+      background: linear-gradient(to bottom, #054d00, #0d8600);
+      border-radius: 40%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .leaves.left {
+      left: -50px;
+      top: 50%;
+      transform: rotate(-30deg);
+    }
+
+    .leaves.right {
+      right: -50px;
+      top: 30%;
+      transform: rotate(30deg);
+    }
+
+    .bloom {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bloom-animation 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes bloom-animation {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.05);
+      }
+    }
+
+    .petal {
+      position: absolute;
+      width: 40px;
+      height: 70px;
+      background: radial-gradient(circle, #f4f4f4, #ffcbf2);
+      border-radius: 50%;
+      transform-origin: bottom center;
+    }
+
+    .petal:nth-child(1) {
+      transform: rotate(-30deg);
+    }
+
+    .petal:nth-child(2) {
+      transform: rotate(0deg);
+    }
+
+    .petal:nth-child(3) {
+      transform: rotate(30deg);
+    }
+
+    .petal:nth-child(4) {
+      transform: rotate(60deg);
+    }
+
+    .petal:nth-child(5) {
+      transform: rotate(-60deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="moon"></div>
+  <div class="land"></div>
+  <div class="stars">
+    <div class="star" style="top: 10%; left: 20%; animation-duration: 2s;"></div>
+    <div class="star" style="top: 40%; left: 50%; animation-duration: 3s;"></div>
+    <div class="star" style="top: 70%; left: 80%; animation-duration: 4s;"></div>
+    <div class="star" style="top: 30%; left: 10%; animation-duration: 5s;"></div>
+    <div class="star" style="top: 90%; left: 60%; animation-duration: 2.5s;"></div>
+  </div>
+  <div class="lily">
+    <div class="stem">
+      <div class="leaves left"></div>
+      <div class="leaves right"></div>
+    </div>
+    <div class="bloom">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+    </div>
+  </div>
+</body>
+</html>
